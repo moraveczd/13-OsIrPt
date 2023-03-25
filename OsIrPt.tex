@@ -1,30 +1,27 @@
-\documentclass[hyperref=unicode, presentation,10pt]{beamer}
+\documentclass[hyperref=unicode,presentation,10pt]{beamer}
 
 \usepackage[absolute,overlay]{textpos}
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{adjustbox}
-\usepackage{mhchem}
+\usepackage[version=4]{mhchem}
 \usepackage{chemfig}
-\usepackage{ucs}
-\usepackage[utf8]{inputenc}
 \usepackage{caption}
+\usepackage{makecell}
 
 %dělení slov
 \usepackage{ragged2e}
 \let\raggedright=\RaggedRight
 %konec dělení slov
 
-\PrerenderUnicode{ěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ}
-
 \addtobeamertemplate{frametitle}{
-   \let\insertframetitle\insertsectionhead}{}
+	\let\insertframetitle\insertsectionhead}{}
 \addtobeamertemplate{frametitle}{
-   \let\insertframesubtitle\insertsubsectionhead}{}
+	\let\insertframesubtitle\insertsubsectionhead}{}
 
 \makeatletter
-  \CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
-  \renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+\CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+\renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
 \makeatother
 \setbeamercolor{section in toc}{fg=red}
 \setbeamertemplate{section in toc shaded}[default][100]
@@ -38,17 +35,18 @@
 \def\uv#1{„#1“}
 
 \mode<presentation>{\usetheme{default}}
- \usecolortheme{crane}
+\usecolortheme{crane}
 
 \setbeamertemplate{footline}[frame number]
 
-\begin{document}
 \title[Crisis]
 {C2062 -- Anorganická chemie II}
 
 \subtitle{Osmium, iridium, platina, hassium, meitnerium a darmstadtium}
 \author{Zdeněk Moravec, hugo@chemi.muni.cz \\ \adjincludegraphics[height=60mm]{img/IUPAC_PSP.jpg}}
 \date{}
+
+\begin{document}
 
 \begin{frame}
 	\titlepage
@@ -65,7 +63,7 @@
 	 Teplota tání [$^\circ$C] & 3033 & 2446 & 1768 \\\hline
 	 Teplota varu [$^\circ$C]  & 5012 & 4130 & 3825 \\\hline
 	 Objeven & 1803 & 1803 & 1735 \\\hline
-	 Vzhled & stříbrný & stříbrno-bílý & stříbrno-bílý \\
+	 Vzhled & stříbrný\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Osmium_crystals.jpg}{Alchemist-hp/Commons}} & stříbrno-bílý\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Iridium-2.jpg}{Materialscientist/Commons}} & stříbrno-bílý\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Platinum_crystals.jpg}{Periodictableru/Commons}} \\
 	 &  \begin{minipage}{.2\textwidth}
 	 	\adjincludegraphics[width=\linewidth]{img/Osmium.jpg}
 	 \end{minipage}
@@ -86,7 +84,7 @@
 			\vfill
 			\begin{itemize}
 				\item \textit{Hassium}, transuran s protonovým číslem 108.
-				\item Silně radioaktivní.
+				\item Nemá žádný stabilní izotop.
 				\item Pojmenován byl v roce 1997 podle spolkového státu Hesensko, kde byl poprvé připraven.\footnote[frame]{\href{http://publications.iupac.org/pac/pdf/1997/pdf/6912x2471.pdf}{Names and symbols of transfermium elements}}
 				\item První příprava byla publikována roku 1984, kdy byl terč z olova bombardován jádry železa:
 				\item \ce{$_{82}^{208}$Pb + $_{26}^{58}$Fe -> $^{265}_{108}$Hs + ^1_0n}
@@ -95,7 +93,10 @@
 			\vfill
 		\end{column}
 		\begin{column}{0.4\textwidth}
-			\adjincludegraphics[width=\textwidth]{img/Hesse.png}
+			\begin{figure}
+				\adjincludegraphics[width=.9\textwidth]{img/Hesse.png}
+				\caption*{Hesensko.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Locator_map_Hesse_in_Germany.svg}{TUBS/Commons}}}
+			\end{figure}
 		\end{column}
 	\end{columns}
 }
@@ -121,16 +122,19 @@
 			\vfill
 			\begin{itemize}
 				\item \textit{Meitnerium}, transuran s protonovým číslem 109.
-				\item Silně radioaktivní.
+				\item Nemá žádný stabilní izotop.
 				\item Pojmenován byl v roce 1997 podle rakouské fyzičky Lise Meitner, která se zabývala studiem radioaktivity.\footnote[frame]{\href{http://publications.iupac.org/pac/pdf/1997/pdf/6912x2471.pdf}{Names and symbols of transfermium elements}}
 				\item První příprava byla publikována roku 1982, kdy byl terč z bismutu bombardován jádry železa:
-				\item \ce{$_{83}^{209}$Bi + $_{26}^{58}$Fe -> $^{266}_{109}$Mt + ^1_0n}
+				\item \ce{$_{\ 83}^{209}$Bi + $_{26}^{58}$Fe -> $^{266}_{109}$Mt + ^1_0n}
 				\item Známe devět izotopů a dva jaderné izomery. Nejdelší poločas rozpadu má \ce{^{278}Mt}, 7,6~s.
 			\end{itemize}
 			\vfill
 		\end{column}
 		\begin{column}{0.4\textwidth}
-			\adjincludegraphics[width=\textwidth]{img/Hahn_Meitner_1912.jpg}
+			\begin{figure}
+				\adjincludegraphics[width=\textwidth]{img/Hahn_Meitner_1912.jpg}
+				\caption*{Lisa Mietnerová a Otto Hahn, 1912.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Hahn_Meitner_1912.jpg}{Drdoht/Commons}}}
+			\end{figure}
 		\end{column}
 	\end{columns}
 }
@@ -143,17 +147,20 @@
 			\vfill
 			\begin{itemize}
 				\item \textit{Darmstadtium}, transuran s protonovým číslem 110.
-				\item Silně radioaktivní.
+				\item Nemá žádný stabilní izotop.
 				\item Pojmenován byl v roce 2003 podle německého Darmstadtu.\footnote[frame]{\href{https://doi.org/10.1351/pac200375101613}{Name and Symbol of the Element with Atomic Number 110 (IUPAC Recommendations 2003)}}
 				\item První příprava byla publikována roku 1994, kdy byl terč z olova bombardován jádry niklu:\footnote[frame]{\href{https://doi.org/10.1007/BF01291181}{Production and decay of $^{269}$110}}
-				\item \ce{$_{82}^{208}$Pb + $_{28}^{62}$Ni -> $^{269}_{110}$Ds + ^1_0n}
-				\item \ce{$_{82}^{208}$Pb + $_{28}^{64}$Ni -> $^{271}_{110}$Ds + ^1_0n}
+				\item \ce{$_{\ 82}^{208}$Pb + $_{28}^{62}$Ni -> $^{269}_{110}$Ds + ^1_0n}
+				\item \ce{$_{\ 82}^{208}$Pb + $_{28}^{64}$Ni -> $^{271}_{110}$Ds + ^1_0n}
 				\item Známe devět izotopů a tři jaderné izomery. Nejdelší poločas rozpadu má \ce{^{281}Ds}, 9,6~s.
 			\end{itemize}
 			\vfill
 		\end{column}
 		\begin{column}{0.4\textwidth}
-			\adjincludegraphics[width=\textwidth]{img/Darmstadt.jpg}
+			\begin{figure}
+				\adjincludegraphics[width=\textwidth]{img/Darmstadt.jpg}
+				\caption*{Darmstadt.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Luisenplatz,_Darmstadt.jpg}{Heidas/Commons}}}
+			\end{figure}
 		\end{column}
 	\end{columns}
 }
